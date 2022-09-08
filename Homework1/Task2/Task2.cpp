@@ -4,16 +4,14 @@ class A {
     int x = 0xA;
     char y = 0xB;
     double z = 0xFFFFp0;
-    void print_x() { std::cout << x << '\n'; };
-    void print_y() { std::cout << y << '\n'; };
-    void print_z() { std::cout << z << '\n'; };
+    void print_x();
+    void print_y();
+    void print_z();
 };
-
-/*
+// TODO function call
 void A::print_x() { std::cout << x << '\n'; }
 void A::print_y() { std::cout << y << '\n'; }
 void A::print_z() { std::cout << z << '\n'; }
-*/
 
 int main() {
     A obj;
