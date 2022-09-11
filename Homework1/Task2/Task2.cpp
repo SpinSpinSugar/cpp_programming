@@ -43,21 +43,21 @@ int main() {
     (
         "leaq	-32(%rbp), %rax\n\t"
         "movq	%rax, %rdi\n\t"
-	    "call	_ZN1A7print_xEv\n\t"
+        "call	_ZN1A7print_xEv\n\t"
     );
 //calling print_y()
     asm
     (
         "leaq	-32(%rbp), %rax\n\t"
-	    "movq	%rax, %rdi\n\t"
-	    "call	_ZN1A7print_yEv\n\t"
+        "movq	%rax, %rdi\n\t"
+        "call	_ZN1A7print_yEv\n\t"
     );
 //calling print_z()
     asm
     (
         "leaq	-32(%rbp), %rax\n\t"
-	    "movq	%rax, %rdi\n\t"
-	    "call	_ZN1A7print_zEv\n\t"
+        "movq	%rax, %rdi\n\t"
+        "call	_ZN1A7print_zEv\n\t"
     );
 
     return 0;
