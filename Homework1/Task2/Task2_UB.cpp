@@ -42,7 +42,7 @@ int main() {
     std::cout << "Initialized z = " << std::hexfloat << *addr_of_z << '\n';
     *addr_of_z = 0xAAAAp0;
     std::cout << "Changed z = " << std::hexfloat << *addr_of_z << '\n';
-    //calling print_x()
+//calling print_x()
     asm
     (
         "leaq	-32(%rbp), %rax\n\t"
