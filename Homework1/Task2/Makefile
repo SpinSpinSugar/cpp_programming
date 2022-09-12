@@ -13,6 +13,6 @@ debug:
 asm:
 	$(CC) -O0 -S Task2.cpp
 clean:
-	rm Task2_2
+	rm Task2_UB
 	rm Task_2
 	clear
