@@ -48,8 +48,8 @@ public:
     MyArray(const MyArray& rhs): buf(rhs.buf) {};
     MyArray(MyArray&& rhs) : buf(rhs.buf) {};
     ~MyArray() {};
-    MyArray& operator=(const MyArray& rhs) & { buf = rhs.buf; return *this;};
-    MyArray& operator=(MyArray&& rhs) { buf = std::move(rhs.buf); return *this;};
+    MyArray& operator=(const MyArray& rhs) & { buf = rhs.buf; return *this; };
+    MyArray& operator=(MyArray&& rhs) { buf = std::move(rhs.buf); return *this; };
     int& operator[](size_t idx) { return *(buf.arr + idx); }
     int& get(size_t idx) & { return *(buf.arr + idx); }
     void set(size_t idx, int val) { *(buf.arr + idx) = val; }
