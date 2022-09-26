@@ -5,7 +5,7 @@ class MyArray {
         int* arr;
         size_t size;
         Buffer() : arr(nullptr), size(0) { std::cout << "Default ctor\n";}
-        explicit Buffer(size_t sz) : arr(new int[sz]), size(sz) { std::cout << "Ctor\n";} 
+        Buffer(size_t sz) : arr(new int[sz]), size(sz) { std::cout << "Ctor\n";} 
         Buffer(const Buffer& rhs) : arr(new int[rhs.size]), size(rhs.size) {
             std::cout << "Copy ctor\n";
             my_memcpy(this->arr, rhs.arr, rhs.size);
