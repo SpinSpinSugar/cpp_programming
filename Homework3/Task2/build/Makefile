@@ -249,29 +249,29 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-Task2.o: Task2.cpp.o
+Task2.o: Task2.c.o
 .PHONY : Task2.o
 
 # target to build an object file
-Task2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.cpp.o
-.PHONY : Task2.cpp.o
+Task2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.c.o
+.PHONY : Task2.c.o
 
-Task2.i: Task2.cpp.i
+Task2.i: Task2.c.i
 .PHONY : Task2.i
 
 # target to preprocess a source file
-Task2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.cpp.i
-.PHONY : Task2.cpp.i
+Task2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.c.i
+.PHONY : Task2.c.i
 
-Task2.s: Task2.cpp.s
+Task2.s: Task2.c.s
 .PHONY : Task2.s
 
 # target to generate assembly for a file
-Task2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.cpp.s
-.PHONY : Task2.cpp.s
+Task2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.c.s
+.PHONY : Task2.c.s
 
 Tests.o: Tests.cpp.o
 .PHONY : Tests.o
