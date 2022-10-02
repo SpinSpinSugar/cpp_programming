@@ -218,8 +218,13 @@ CMakeFiles/Task1.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/tr1/modified_bessel_func.tcc \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
-  /usr/include/c++/11/tr1/riemann_zeta.tcc
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  /usr/include/c++/11/complex \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc
 
+
+/usr/include/c++/11/sstream:
 
 /usr/include/c++/11/tr1/riemann_zeta.tcc:
 
@@ -410,6 +415,8 @@ CMakeFiles/Task1.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/ostream:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/c++/11/complex:
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
@@ -630,6 +637,8 @@ CMakeFiles/Task1.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/11/cstdlib:
+
+/usr/include/c++/11/bits/sstream.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 
