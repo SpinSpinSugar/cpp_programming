@@ -1,7 +1,6 @@
 # cpp_programming_semester3
 
-How to compile:
-Task1 - Task2
+How to compile Homework1-Homework2:
 >1. To build: make
 >2. To debug: make debug
 >3. To clear directory: make clear
