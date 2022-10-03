@@ -185,6 +185,19 @@ Task2/fast:
 .PHONY : Task2/fast
 
 #=============================================================================
+# Target rules for targets named Test_generator
+
+# Build rule for target.
+Test_generator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test_generator
+.PHONY : Test_generator
+
+# fast build rule for target.
+Test_generator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test_generator.dir/build.make CMakeFiles/Test_generator.dir/build
+.PHONY : Test_generator/fast
+
+#=============================================================================
 # Target rules for targets named Tests
 
 # Build rule for target.
@@ -249,29 +262,53 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-Task2.o: Task2.c.o
+Task2.o: Task2.cpp.o
 .PHONY : Task2.o
 
 # target to build an object file
-Task2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.c.o
-.PHONY : Task2.c.o
+Task2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.cpp.o
+.PHONY : Task2.cpp.o
 
-Task2.i: Task2.c.i
+Task2.i: Task2.cpp.i
 .PHONY : Task2.i
 
 # target to preprocess a source file
-Task2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.c.i
-.PHONY : Task2.c.i
+Task2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.cpp.i
+.PHONY : Task2.cpp.i
 
-Task2.s: Task2.c.s
+Task2.s: Task2.cpp.s
 .PHONY : Task2.s
 
 # target to generate assembly for a file
-Task2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.c.s
-.PHONY : Task2.c.s
+Task2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task2.dir/build.make CMakeFiles/Task2.dir/Task2.cpp.s
+.PHONY : Task2.cpp.s
+
+Test_generator.o: Test_generator.cpp.o
+.PHONY : Test_generator.o
+
+# target to build an object file
+Test_generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test_generator.dir/build.make CMakeFiles/Test_generator.dir/Test_generator.cpp.o
+.PHONY : Test_generator.cpp.o
+
+Test_generator.i: Test_generator.cpp.i
+.PHONY : Test_generator.i
+
+# target to preprocess a source file
+Test_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test_generator.dir/build.make CMakeFiles/Test_generator.dir/Test_generator.cpp.i
+.PHONY : Test_generator.cpp.i
+
+Test_generator.s: Test_generator.cpp.s
+.PHONY : Test_generator.s
+
+# target to generate assembly for a file
+Test_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test_generator.dir/build.make CMakeFiles/Test_generator.dir/Test_generator.cpp.s
+.PHONY : Test_generator.cpp.s
 
 Tests.o: Tests.cpp.o
 .PHONY : Tests.o
@@ -311,6 +348,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... Task2"
+	@echo "... Test_generator"
 	@echo "... Tests"
 	@echo "... gmock"
 	@echo "... gmock_main"
@@ -319,6 +357,9 @@ help:
 	@echo "... Task2.o"
 	@echo "... Task2.i"
 	@echo "... Task2.s"
+	@echo "... Test_generator.o"
+	@echo "... Test_generator.i"
+	@echo "... Test_generator.s"
 	@echo "... Tests.o"
 	@echo "... Tests.i"
 	@echo "... Tests.s"

@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/Task2.dir/Task2.c.o -o Task2 
+/usr/bin/c++ CMakeFiles/Task2.dir/Task2.cpp.o -o Task2 

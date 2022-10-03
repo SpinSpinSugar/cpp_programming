@@ -16,7 +16,10 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # add the executable
-add_executable(Task2 Task2.c)
+add_executable(
+    Task2
+    Task2.cpp
+)
 
 target_include_directories(Task2 PUBLIC
                           "${PROJECT_BINARY_DIR}"
@@ -24,6 +27,11 @@ target_include_directories(Task2 PUBLIC
 )
 
 enable_testing()
+
+add_executable(
+    Test_generator
+    Test_generator.cpp
+)
 
 add_executable(
     Tests
