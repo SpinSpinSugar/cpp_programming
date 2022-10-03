@@ -1,4 +1,3 @@
-#pragma once
 #include <forward_list>
 #include <list>
 
@@ -24,7 +23,7 @@ void generic_sort(std::list<T>& list, Comp cmp = std::less<>{}) {
 #define SWAP(a, b, size)						                      \
     do									                              \
         {									                          \
-            size_t tmpsize = (size);						          \
+            std::size_t tmpsize = (size);						          \
             char *tmpa = (a), *tmpb = (b);					          \
             do								                          \
                 {								                      \
