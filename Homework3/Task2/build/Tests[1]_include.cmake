@@ -1,5 +1,0 @@
-if(EXISTS "/home/chansonsdamour/Desktop/Repositories/cpp_programming_semester3/Homework3/Task2/build/Tests[1]_tests.cmake")
-  include("/home/chansonsdamour/Desktop/Repositories/cpp_programming_semester3/Homework3/Task2/build/Tests[1]_tests.cmake")
-else()
-  add_test(Tests_NOT_BUILT Tests_NOT_BUILT)
-endif()

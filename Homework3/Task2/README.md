@@ -6,3 +6,9 @@
 
 ## Tests.cpp - файл с тестами
 ## Test_generator.cpp - программа для генерации тестов
+
+Запуск: 
+> cd build
+> cmake ..
+> cmake --build .
+> ./Tests
