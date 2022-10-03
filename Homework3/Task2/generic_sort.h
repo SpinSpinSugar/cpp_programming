@@ -20,17 +20,17 @@ void generic_sort(std::list<T>& list, Comp cmp = std::less<>{}) {
 }
 
 // Namespace for algorithms and comparators
-#define SWAP(a, b, size)						                      \
-    do									                              \
-        {									                          \
-            std::size_t tmpsize = (size);						      \
-            char *tmpa = (a), *tmpb = (b);					          \
-            do								                          \
-                {								                      \
-                    char tmptmp = *tmpa;						      \
-                    *tmpa++ = *tmpb;						          \
-                    *tmpb++ = tmptmp;						          \
-                } while (--tmpsize > 0);						      \
+#define SWAP(a, b, size)                                                \
+    do                                                                  \
+        {                                                               \
+            std::size_t tmpsize = (size);                               \
+            char *tmpa = (a), *tmpb = (b);                              \
+            do                                                          \
+                {                                                       \
+                    char tmptmp = *tmpa;                                \
+                    *tmpa++ = *tmpb;                                    \
+                    *tmpb++ = tmptmp;                                   \
+                } while (--tmpsize > 0);                                \
         } while (0)
 
 
