@@ -8,7 +8,7 @@
 ## Test_generator.cpp - программа для генерации тестов
 
 Запуск: 
-> cd build
-> cmake ..
-> cmake --build .
-> ./Tests
+> 1. cd build
+> 2. cmake ..
+> 3. cmake --build .
+> 4. ./Tests
