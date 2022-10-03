@@ -23,7 +23,7 @@ void generic_sort(std::list<T>& list, Comp cmp = std::less<>{}) {
 #define SWAP(a, b, size)						                      \
     do									                              \
         {									                          \
-            std::size_t tmpsize = (size);						          \
+            std::size_t tmpsize = (size);						      \
             char *tmpa = (a), *tmpb = (b);					          \
             do								                          \
                 {								                      \
@@ -54,7 +54,26 @@ namespace generic_sort_utility {
     }
     
     //Sortings
-    void insertion_sort() {}
+    void insertion_sort(void* begin, std::size_t total_elems, std::size_t size, Comp cmp) {
+        char* tmp1 = reinterpret_cast<char*>(begin);
+        char* tmp2;
+        for (int i, j = 1; j < total_elems; ++j) {
+            char* key = reinterpret_cast<char*>(malloc(size));
+            tmp1 += j * size;
+            memcpy(key, tmp1, size);
+            i = j - 1;
+            while (i >= 0 && !cmp(reinterpret_cast<void*>(reinterpret_cast<char*>(begin) + i * size), reinterpret_cast<void*>(key))) {
+                tmp2 = reinterpret_cast<char*>(begin) + i * size;
+                memcpy(tmp2 + size, tmp2, size);
+                --i;
+            }
+            tmp2 = reinterpret_cast<char*>(begin) + i * size;
+            memcpy(tmp2 + size, key, size);
+            tmp1 = reinterpret_cast<char*>(begin);
+            free(key);
+        }
+        
+    }
 
     void bubble_sort(void* begin, std::size_t total_elems, std::size_t size, Comp cmp) {
         char* tmp1 = reinterpret_cast<char*>(begin);
