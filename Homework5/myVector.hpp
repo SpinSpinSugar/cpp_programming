@@ -84,32 +84,6 @@ public:
         return capacity_;
     }
 
-    void resize(size_t n, const T& value = T()) {
-        if (n > capacity_) reserve(n);
-        if (n == size_) return;
-
-        if (n < size_) {
-            for (size_t i = n; i < size_; ++i) {
-                data_[i].~T();
-            }
-            size_ = n;
-            return;
-        }
-        
-        size_t i = size_;
-        //if exception in ctor was thrown, we should clear newly constructed elements
-        try {
-            for (; i < n; ++i) {
-                new(data_ + i) T();
-            }
-        } catch(...) {
-            for (size_t j; j < i; ++j) {
-                data_[j].~T();
-            }
-        }
-        size_ = n;
-    }
-
     void reserve(size_t n) {
         if (n <= capacity_) return;
         //T* newarr = new T[calc_cap(n)]; - TERRIBLE, calls default ctor, but we don't need it
@@ -137,6 +111,31 @@ public:
         delete[] reinterpret_cast<char*>(data_);
         data_ = newdata;
         capacity_ = n;
+    }
+
+    void resize(size_t n, const T& value = T()) {
+        if (n > capacity_) reserve(n);
+        if (n == size_) return;
+
+        if (n < size_) {
+            for (size_t i = n; i < size_; ++i) {
+                data_[i].~T();
+            }
+            size_ = n;
+            return;
+        }
+        
+        size_t i = size_;
+        try {
+            for (; i < n; ++i) {
+                new(data_ + i) T();
+            }
+        } catch(...) {
+            for (size_t j; j < i; ++j) {
+                data_[j].~T();
+            }
+        }
+        size_ = n;
     }
 
     void push_back(const T& value) {
