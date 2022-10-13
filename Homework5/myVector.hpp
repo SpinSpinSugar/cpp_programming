@@ -1,11 +1,13 @@
 #include <stdexcept>
 
 namespace myVector__details{
-    //Rounding size_t n to next power of 2
+    
+    //copy of std::__log()
     inline size_t mylog(size_t x) {
         return 63^__builtin_clzl(x);
-        //copy of std::__log()
     }
+
+    //Rounding size_t n to next power of 2
     inline size_t calc_cap(size_t n) {
         return n != 0
                     ? (1UL << (mylog(n) + 1UL))
