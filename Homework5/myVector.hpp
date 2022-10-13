@@ -84,7 +84,7 @@ public:
         return capacity_;
     }
 
-    void resize(size_t n, T value = T()) {
+    void resize(size_t n, const T& value = T()) {
         if (n > capacity_) reserve(n);
         if (n == size_) return;
 
