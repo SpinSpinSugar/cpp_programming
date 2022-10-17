@@ -1,6 +1,7 @@
 #include <stdexcept>
+#include <type_traits>
 
-namespace myVector__details{
+namespace myVector__details {
     
     //copy of std::__log()
     inline size_t mylog(size_t x) {
@@ -23,13 +24,26 @@ class myVector {
 public:
     myVector() : data_(nullptr), size_(0), capacity_(0) {}
 
-    myVector(size_t n, const T& value = T()) : data_(nullptr),
+    explicit myVector(size_t n, const T& value = T()) : data_(nullptr),
                                                size_(n),
                                                capacity_(myVector__details::calc_cap(n)) 
-                                               {
-                                                    data_ = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]); //raw bytes
-                                               }
-
+    {
+        T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]); //raw bytes
+        size_t i = 0;
+        try {
+                for (; i < size_; ++i) {
+                    new (newdata + i) T(value);
+                }
+            } catch (...) {
+                for (size_t j = 0; j < i; ++j) {
+                    newdata[j].~T();
+                }
+                delete[] reinterpret_cast<char*>(newdata);
+                throw;
+            }
+        std::swap(data_, newdata);
+    }
+    
     myVector(const myVector& rhs) : data_(nullptr), size_(rhs.size_), capacity_(rhs.capacity_) {
         T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]);
         size_t i = 0;
@@ -48,6 +62,27 @@ public:
         newdata = nullptr;
     }
     
+    myVector(std::initializer_list<T> initList) : data_(nullptr),
+                                                  size_(initList.size()),
+                                                  capacity_(myVector__details::calc_cap(initList.size()))
+    {
+        T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]);
+        size_t i = 0;
+        try {
+            for (auto it = initList.begin(), end = initList.end(); it != end; ++i, ++it) {
+                new (newdata + i) T(*it);
+            }
+        } catch (...) {
+            for (size_t j = 0; j < i; ++j) {
+                newdata[j].~T();
+            }
+            delete[] reinterpret_cast<char*>(newdata);
+            throw;
+        }
+        data_ = newdata;
+        newdata = nullptr;
+    }
+
     myVector(myVector&& rhs) : data_(rhs.data_), size_(rhs.size_), capacity_(rhs.capacity_) { rhs.data_ = nullptr; }
     
     myVector& operator=(const myVector& rhs) {
@@ -66,18 +101,27 @@ public:
         }
         data_ = newdata;
         newdata = nullptr;
-        size_ = rhs.size_;
-        capacity_ = rhs.capacity_;
+        return *this;
     }
     
     myVector&& operator=(myVector&& rhs) {
         std::swap(data_, rhs.data_);
         std::swap(size_, rhs.size_);
         std::swap(capacity_, rhs.capacity_);
+        return std::move(*this);
     }
 
-    ~myVector() { delete[] reinterpret_cast<char*>(data_); }
-    
+    ~myVector() requires (!std::is_trivially_destructible_v<T>) {
+        for (size_t i = 0; i < size_; ++i) {
+            data_[i].~T();
+        }
+        delete[] reinterpret_cast<char*>(data_);
+    }
+
+    ~myVector() { 
+        delete[] reinterpret_cast<char*>(data_);
+    }
+
     size_t size() const {
         return size_;
     }
