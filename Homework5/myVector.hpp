@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <type_traits>
+//#include <type_traits>
 
 namespace myVector__details {
     
@@ -25,8 +25,8 @@ public:
     myVector() : data_(nullptr), size_(0), capacity_(0) {}
 
     explicit myVector(size_t n, const T& value = T()) : data_(nullptr),
-                                               size_(n),
-                                               capacity_(myVector__details::calc_cap(n)) 
+                                                        size_(n),
+                                                        capacity_(myVector__details::calc_cap(n)) 
     {
         T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]); //raw bytes
         size_t i = 0;
@@ -104,29 +104,26 @@ public:
         return *this;
     }
     
-    myVector&& operator=(myVector&& rhs) {
+    myVector&& operator=(myVector&& rhs) noexcept {
         std::swap(data_, rhs.data_);
         std::swap(size_, rhs.size_);
         std::swap(capacity_, rhs.capacity_);
         return std::move(*this);
     }
 
-    ~myVector() requires (!std::is_trivially_destructible_v<T>) {
+    ~myVector() /*requires (!std::is_trivially_destructible_v<T>)*/ {
         for (size_t i = 0; i < size_; ++i) {
+            //works for all types
             data_[i].~T();
         }
         delete[] reinterpret_cast<char*>(data_);
     }
 
-    ~myVector() { 
-        delete[] reinterpret_cast<char*>(data_);
-    }
-
-    size_t size() const {
+    size_t size() const noexcept {
         return size_;
     }
     
-    size_t capacity() const {
+    size_t capacity() const noexcept {
         return capacity_;
     }
 
@@ -214,16 +211,16 @@ public:
         if (n > size_) throw std::out_of_range("Index bigger than vector size");
         return data_[n];
     }
-
-public:
+};
 /*
+public:
     void dump(std::ostream& os) const {
         for (size_t i = 0; i < size_; ++ i) {
             os << data_[i] << ' ';
         }
     }
 */
-};
+
 /*
 template <typename T>
 std::ostream& operator<<(std::ostream& os, const myVector<T>& v) {
