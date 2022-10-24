@@ -7,7 +7,7 @@ struct S {
     ~S() { std::cout << "Dtor s" << k << '\n';}
 };
 
-S s0; //dies last
+S s0; //global var
 
 struct Wrapper {
     S s;
@@ -19,7 +19,7 @@ struct Wrapper2 {
     ~Wrapper2() { delete[] arr; }
 };
 
-static S s1; //dies before s0
+static S s1; //static var
 int main() {
     S s2; // lifetime ends
     try {
