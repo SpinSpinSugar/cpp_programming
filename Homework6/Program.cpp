@@ -1,8 +1,36 @@
 #include <iostream>
-#include <stdio.h>
+#include <fstream>
+#include <filesystem>
+#include <limits>
+
+namespace fs = std::filesystem;
 
 int main() {
-    FILE* f = fopen("1.txt", "wr");
-    fclose(f);
+    fs::path WorkingPath = fs::current_path();
+    
+    double Numerator;
+    std::cout << "Input the filename of numerator file:\n";
+    std::string NumFileName;
+    std::ifstream NumFile; //Create stream to read from file
+    std::cin >> NumFileName;
+    WorkingPath /= NumFileName;
+    NumFile.open(WorkingPath);
+    NumFile >> Numerator;
+
+    double Denominator; 
+    std::cout << "Input the Denumerator:\n";
+    std::string DenStr;
+    std::cin >> DenStr;
+    Denominator = std::stod(DenStr);
+
+    std::cout << Numerator << ' ' << Denominator << '\n';
+
+    std::cout << "Input the filename of output file:\n";
+    std::string OutFileName;
+    std::cin >> OutFileName;
+    WorkingPath.replace_filename(OutFileName);
+    std::ofstream OutFile(WorkingPath);
+    OutFile << Numerator / Denominator;
+    std::cout << "Result: " << Numerator / Denominator << '\n';
     return 0;
 }
