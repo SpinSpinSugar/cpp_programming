@@ -86,6 +86,7 @@ public:
     myVector(myVector&& rhs) : data_(rhs.data_), size_(rhs.size_), capacity_(rhs.capacity_) { rhs.data_ = nullptr; }
     
     myVector& operator=(const myVector& rhs) {
+        if (this == &rhs) return *this;
         T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]);
         size_t i = 0;
         try {
@@ -104,7 +105,8 @@ public:
         return *this;
     }
     
-    myVector&& operator=(myVector&& rhs) noexcept {
+    myVector& operator=(myVector&& rhs) noexcept {
+        if (this == &rhs) return *this;
         std::swap(data_, rhs.data_);
         std::swap(size_, rhs.size_);
         std::swap(capacity_, rhs.capacity_);
