@@ -1,16 +1,16 @@
 #include <iostream>
 
-template <typename T, int n>
-struct myArray{
+template <typename T, typename N>
+struct myArray {
     myArray() {std::cout << "generic type\n"; }
 };
 template <typename T>
 
-struct myArray<T, 1> {
+struct myArray<T, int> {
     myArray() {std::cout << "partial spec\n"; }
 };
 int main() {
-    myArray<float, 0> a;
-    myArray<float, 1> c;
+    myArray<float, int*> a;
+    myArray<float, int> c;
     return 0;
 }
