@@ -1,4 +1,3 @@
-$COMP = g++
 
 all:
 	g++ --std=c++20 Output.cpp -o Output.out
