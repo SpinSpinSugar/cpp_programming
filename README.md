@@ -1,15 +1,5 @@
 # cpp_programming_semester3
 
-How to compile Homework1 - Homework2:
->1. To build: make
->2. To debug: make debug
->3. To clear directory: make clear
-
-Since Homework3:
->1. cd build
->2. cmake ..
->3. cmake --build .
-
 ## Homeworks
  # Homework1:
  >1. Создать структуру из 8 разных полей, перестановками добиться максимального и минимального размера экземпляра структуры.
