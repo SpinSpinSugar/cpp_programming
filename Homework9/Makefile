@@ -1,4 +1,4 @@
-CMP = g++
+CMP = clang++
 
 all:
-	$(CMP) --std=c++20 Logger.cpp -o Logger.out
+	$(CMP) -O3 -Wpedantic -Wall -Wextra -Wconversion --std=c++20 shell.cpp -o shell.out
