@@ -1,4 +1,0 @@
-1. Function 5shellIFiiiEE called with arguments: (1, 2) Result: 3
-2. Function 5shellIFiiiEE called with arguments: (2, -10) Result: -8
-3. Function 5shellIFivEE called with arguments: () Result: 5
-4. Function 5shellIFlPiS0_EE called with arguments: (0x7ffff253de94, 0x7ffff253de90) Result: 1
