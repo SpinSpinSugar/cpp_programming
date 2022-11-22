@@ -1,0 +1,10 @@
+Mon Nov 21 00:31:18 2022
+ 1. Function 5shellIFiiiEE called with arguments: (1, 2) Result: 3
+Mon Nov 21 00:31:18 2022
+ 2. Function 5shellIFiiiEE called with arguments: (2, -10) Result: -8
+Mon Nov 21 00:31:18 2022
+ 3. Function 5shellIFivEE called with arguments: () Result: 5
+Mon Nov 21 00:31:18 2022
+ 4. Function 5shellIFlPiS0_EE called with arguments: (0x7ffc260ab944, 0x7ffc260ab940) Result: 1
+Mon Nov 21 00:31:18 2022
+ 5. Function 5shellIFiiiEE called with arguments: (2, -10) Result: -8
