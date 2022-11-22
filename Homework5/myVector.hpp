@@ -103,7 +103,7 @@ public:
             delete[] reinterpret_cast<char*>(newdata);
             throw;
         }
-        delete[] data_;
+        delete[] reinterpret_cast<char*>(data_);
         data_ = newdata;
         newdata = nullptr;
         return *this;
