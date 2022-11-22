@@ -43,9 +43,15 @@ public:
             }
         std::swap(data_, newdata);
     }
-    
+private:
+    void swap(myVector& rhs) noexcept {
+        std::swap(data_, rhs.data_);
+        std::swap(size_, rhs.size_);
+        std::swap(capacity_, rhs.capacity_);
+    }
+
+public:    
     myVector(const myVector& rhs) : data_(nullptr), size_(rhs.size_), capacity_(rhs.capacity_) {
-/*
         T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]);
         size_t i = 0;
         try {
@@ -61,8 +67,6 @@ public:
         }
         data_ = newdata;
         newdata = nullptr;
-*/
-        *this = rhs;
     }
     
     myVector(std::initializer_list<T> initList) : data_(nullptr),
@@ -90,6 +94,7 @@ public:
     
     myVector& operator=(const myVector& rhs) {
         if (this == &rhs) return *this;
+#if 0
         T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]);
         size_t i = 0;
         try {
@@ -107,14 +112,17 @@ public:
         data_ = newdata;
         newdata = nullptr;
         return *this;
+#endif
+        myVector tmp(rhs);
+        //much better, no raw deletion
+        swap(tmp);
+        return *this;
     }
     
     myVector& operator=(myVector&& rhs) noexcept {
         if (this == &rhs) return *this;
-        std::swap(data_, rhs.data_);
-        std::swap(size_, rhs.size_);
-        std::swap(capacity_, rhs.capacity_);
-        return std::move(*this);
+        swap(rhs);
+        return *this;
     }
 
     ~myVector() /*requires (!std::is_trivially_destructible_v<T>)*/ {
