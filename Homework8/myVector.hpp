@@ -201,7 +201,7 @@ public:
     }
 
     T& at(size_t n) {
-        if (n > size_) throw std::out_of_range("Index bigger than vector size");
+        if (n >= size_) throw std::out_of_range("Index bigger than vector size");
         return data_[n];
     }
 
@@ -210,7 +210,7 @@ public:
     }
 
     const T& at(size_t n) const {
-        if (n > size_) throw std::out_of_range("Index bigger than vector size");
+        if (n >= size_) throw std::out_of_range("Index bigger than vector size");
         return data_[n];
     }
 
