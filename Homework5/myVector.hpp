@@ -45,6 +45,7 @@ public:
     }
     
     myVector(const myVector& rhs) : data_(nullptr), size_(rhs.size_), capacity_(rhs.capacity_) {
+/*
         T* newdata = reinterpret_cast<T*>(new char[capacity_ * sizeof(T)]);
         size_t i = 0;
         try {
@@ -60,6 +61,8 @@ public:
         }
         data_ = newdata;
         newdata = nullptr;
+*/
+        *this = rhs;
     }
     
     myVector(std::initializer_list<T> initList) : data_(nullptr),
@@ -83,7 +86,7 @@ public:
         newdata = nullptr;
     }
 
-    myVector(myVector&& rhs) : data_(rhs.data_), size_(rhs.size_), capacity_(rhs.capacity_) { rhs.data_ = nullptr; }
+    myVector(myVector&& rhs) noexcept : data_(rhs.data_), size_(rhs.size_), capacity_(rhs.capacity_) { rhs.data_ = nullptr; }
     
     myVector& operator=(const myVector& rhs) {
         if (this == &rhs) return *this;
