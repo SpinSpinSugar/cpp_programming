@@ -1,13 +1,14 @@
+CMP = clang++
 
 all:
-	g++ --std=c++20 Output.cpp -o Output.out
-	g++ --std=c++20 Input.cpp -o Input.out
+	$(CMP) -Wpedantic -Wall -Wextra -Wconversion --std=c++20 Output.cpp -o Output.out
+	$(CMP) -Wpedantic -Wall -Wextra -Wconversion --std=c++20 Input.cpp -o Input.out
 
 input:
-	g++ --std=c++20 Input.cpp -o Input.out
+	$(CMP) -Wpedantic -Wall -Wextra -Wconversion --std=c++20 Input.cpp -o Input.out
 
 output:
-	g++ --std=c++20 Output.cpp -o Output.out
+	$(CMP) -Wpedantic -Wall -Wextra -Wconversion --std=c++20 Output.cpp -o Output.out
 
 clear:
 	> data
