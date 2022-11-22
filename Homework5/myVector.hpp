@@ -100,6 +100,7 @@ public:
             delete[] reinterpret_cast<char*>(newdata);
             throw;
         }
+        delete[] data_;
         data_ = newdata;
         newdata = nullptr;
         return *this;

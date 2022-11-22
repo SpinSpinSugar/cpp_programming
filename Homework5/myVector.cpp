@@ -21,5 +21,8 @@ int main() {
     c.resize(2);
     std::cout << c.size() << ' ' << c.capacity() << '\n';
 
+    myVector<int> test {1, 2, 3, 4, 5};
+    b = test;
+
     return 0;
 }
