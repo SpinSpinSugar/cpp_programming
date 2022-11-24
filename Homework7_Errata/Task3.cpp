@@ -13,7 +13,7 @@ struct Derived : Base {
     Derived() : ptr(new int(100)) { std::cout << "D\n"; }
     ~Derived() {
         //this->Base::~Base(); //memleak if ~B before ~D
-        std::cout << "D\n";
+        std::cout << "~D\n";
         delete ptr;
     }
 };
