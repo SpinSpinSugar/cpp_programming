@@ -1,123 +1,155 @@
 #include "MainClasses.cpp"
 
 class Hero : public Unit {
-
+public:
+    ~Hero() override {};
 };
 
 class Undead : public Hero {
-    //~Undead() override {}
+public:
+    ~Undead() override {}
 };
 
 class Human : public Hero {
+public:
+    ~Human() override {};
 };
 
 class Horde : public Hero {
+public:
+    ~Horde() override {};
 };
 
 class Elf : public Hero {
+public:
+    ~Elf() override {};
 };
 
 class TavernHero : public Hero {
-
+public:
+    ~TavernHero() override {};
 };
 
 //Elf heroes
-class DemonHunter : public Elf {
-
+class DemonHunter final : public Elf {
+public:
+    ~DemonHunter() override {};
 };
 
-class KeeperOfTheGrove : public Elf {
-
+class KeeperOfTheGrove final : public Elf {
+public:
+    ~KeeperOfTheGrove() override {};
 };
 
-class PrincessOfTheMoon : public Elf {
-
+class PrincessOfTheMoon final : public Elf {
+public:
+    ~PrincessOfTheMoon() override {};
 };
 
-class Warden : public Elf {
-
+class Warden final : public Elf {
+public:
+    ~Warden() override {};
 };
 
 //Human heroes
-class Paladin : public Human {
-
+class Paladin final : public Human {
+public:
+    ~Paladin() override {};
 };
 
-class Archmage : public Human {
-
+class Archmage final : public Human {
+public:
+    ~Archmage() override {};
 };
 
-class BloodMage : public Human {
-
+class BloodMage final : public Human {
+public:
+    ~BloodMage() override {};
 };
 
-class MountainKing : public Human {
-
+class MountainKing final : public Human {
+    ~MountainKing() override {};
 };
 
 //Undead heroes
-class DeathKnight : public Undead {
-
+class DeathKnight final : public Undead {
+public:
+    ~DeathKnight() override {};
 };
 
-class Lich : public Undead {
-
+class Lich final : public Undead {
+public:
+    ~Lich() override {};
 };
 
-class DreadLord : public Undead {
-
+class DreadLord final : public Undead {
+public:
+    ~DreadLord() override {};
 };
 
-class CryptLord : public Undead {
-
+class CryptLord final : public Undead {
+public:
+    ~CryptLord() override {};
 };
 
 //Horde heroes
-class Blademaster : public Horde {
-
+class Blademaster final : public Horde {
+public:
+    ~Blademaster() override {};
 };
 
-class ShadowHunter : public Horde {
-
+class ShadowHunter final : public Horde {
+public:
+    ~ShadowHunter() override {};
 };
 
-class FarSeer : public Horde {
-
+class FarSeer final : public Horde {
+public:
+    ~FarSeer() override {};
 };
 
-class TaurenChieftain : public Horde {
-
+class TaurenChieftain final : public Horde {
+public:
+    ~TaurenChieftain() override {};
 };
 
 //Tavern heroes
-class Naga : public TavernHero {
-
+class Naga final : public TavernHero {
+public:
+    ~Naga() override {};
 };
 
-class DarkRanger : public TavernHero {
-
+class DarkRanger final : public TavernHero {
+public:
+    ~DarkRanger() override {};
 };
 
-class Brewmaster : public TavernHero {
-
+class Brewmaster final : public TavernHero {
+public:
+    ~Brewmaster() override {};
 };
 
-class Beastmaster : public TavernHero {
-
+class Beastmaster final : public TavernHero {
+public:
+    ~Beastmaster() override {};
 };
 
-class PitLord : public TavernHero {
-
+class PitLord final : public TavernHero {
+public:
+    ~PitLord() override {};
 };
 
-class Tinker : public TavernHero {
-
+class Tinker final : public TavernHero {
+public:
+    ~Tinker() override {};
 };
 
-class Firelord : public TavernHero {
-
+class Firelord final : public TavernHero {
+public:
+    ~Firelord() override {};
 };
 
-class Alchemist : public TavernHero {
-
+class Alchemist final : public TavernHero {
+public:
+    ~Alchemist() override {};
 };
