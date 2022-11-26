@@ -99,7 +99,7 @@ private:
     };
 
     template <typename F>
-    struct Derived : Base {
+    struct Derived final : Base {
         F callable;
         Derived(const F& callable_)
             : callable{callable_}
