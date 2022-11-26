@@ -44,6 +44,7 @@ int main() {
         
         case 2:
             system("clear");
+            std::cout << "Input first letter:\n";
             char firstLetter;
             std::cin >> firstLetter;
             for (const auto& [american, indian] : dictionary) {

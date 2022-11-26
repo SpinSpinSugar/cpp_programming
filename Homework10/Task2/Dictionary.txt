@@ -20,7 +20,7 @@ what's_necessary	the_needful
 vest	waist_coat
 (panty)_hose	tights
 pants	trousers
-sneakers	trainers, plimsolls
+sneakers	trainers
 suspenders	braces
 garters	suspenders
 bathrobe	dressing_gown
@@ -28,7 +28,7 @@ cheesecloth	muslin
 purse	hand_bag
 pocket_book	purse
 wallet	purse
-sandals,_thongs	chappals
+sandals	chappals
 pacifier	dummy
 diaper	nappy
 I'd_love_to	I_don't_mind
@@ -36,7 +36,7 @@ definitely	obvioiusly
 transport	conveyance
 filled_out	filled_up
 jam_packed	chock-a-block
-sidewalk	footpath,_platform
+sidewalk	footpath
 crosswalk	pedestrian_crossing
 store	shop
 drug_store	medicals_store
