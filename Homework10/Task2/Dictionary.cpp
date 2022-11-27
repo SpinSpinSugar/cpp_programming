@@ -11,9 +11,10 @@ struct Dictionary_Unit {
 };
 
 int main() {
-    std::string filename = "Dictionary.txt";
+    //"Dictionary.txt";
+    std::string filename;
     std::cout << "Input filename of dictionary:\n";
-    //std::cin >> filename;
+    std::cin >> filename;
     std::fstream file {filename, file.in};
     std::vector<Dictionary_Unit> dictionary;
     for(;;) {
