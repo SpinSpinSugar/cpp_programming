@@ -1,0 +1,8 @@
+<map id="TaurenChieftain" name="TaurenChieftain">
+<area shape="rect" id="node1" title=" " alt="" coords="5,749,147,827"/>
+<area shape="rect" id="node2" href="$classHorde.html" title=" " alt="" coords="33,624,119,701"/>
+<area shape="rect" id="node3" href="$classHero.html" title=" " alt="" coords="37,499,115,576"/>
+<area shape="rect" id="node4" href="$classUnit.html" title=" " alt="" coords="39,315,113,451"/>
+<area shape="rect" id="node5" href="$classObject.html" title=" " alt="" coords="32,160,120,267"/>
+<area shape="rect" id="node6" href="$classIObject.html" title=" " alt="" coords="30,5,122,112"/>
+</map>

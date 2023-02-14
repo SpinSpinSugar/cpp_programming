@@ -1,0 +1,11 @@
+<map id="Horde" name="Horde">
+<area shape="rect" id="node1" title=" " alt="" coords="227,624,312,701"/>
+<area shape="rect" id="node6" href="$classBlademaster.html" title=" " alt="" coords="5,749,128,827"/>
+<area shape="rect" id="node7" href="$classFarSeer.html" title=" " alt="" coords="152,749,248,827"/>
+<area shape="rect" id="node8" href="$classShadowHunter.html" title=" " alt="" coords="272,749,408,827"/>
+<area shape="rect" id="node9" href="$classTaurenChieftain.html" title=" " alt="" coords="432,749,573,827"/>
+<area shape="rect" id="node2" href="$classHero.html" title=" " alt="" coords="230,499,309,576"/>
+<area shape="rect" id="node3" href="$classUnit.html" title=" " alt="" coords="232,315,307,451"/>
+<area shape="rect" id="node4" href="$classObject.html" title=" " alt="" coords="225,160,313,267"/>
+<area shape="rect" id="node5" href="$classIObject.html" title=" " alt="" coords="223,5,315,112"/>
+</map>

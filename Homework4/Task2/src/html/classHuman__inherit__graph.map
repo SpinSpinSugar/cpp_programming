@@ -1,0 +1,11 @@
+<map id="Human" name="Human">
+<area shape="rect" id="node1" title=" " alt="" coords="215,624,307,701"/>
+<area shape="rect" id="node6" href="$classArchmage.html" title=" " alt="" coords="5,749,115,827"/>
+<area shape="rect" id="node7" href="$classBloodMage.html" title=" " alt="" coords="139,749,253,827"/>
+<area shape="rect" id="node8" href="$classMountainKing.html" title=" " alt="" coords="277,749,379,827"/>
+<area shape="rect" id="node9" href="$classPaladin.html" title=" " alt="" coords="403,749,496,827"/>
+<area shape="rect" id="node2" href="$classHero.html" title=" " alt="" coords="222,499,301,576"/>
+<area shape="rect" id="node3" href="$classUnit.html" title=" " alt="" coords="224,315,299,451"/>
+<area shape="rect" id="node4" href="$classObject.html" title=" " alt="" coords="217,160,305,267"/>
+<area shape="rect" id="node5" href="$classIObject.html" title=" " alt="" coords="215,5,307,112"/>
+</map>

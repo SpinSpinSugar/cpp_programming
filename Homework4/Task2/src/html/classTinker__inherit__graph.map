@@ -1,0 +1,8 @@
+<map id="Tinker" name="Tinker">
+<area shape="rect" id="node1" title=" " alt="" coords="21,749,107,827"/>
+<area shape="rect" id="node2" href="$classTavernHero.html" title=" " alt="" coords="5,624,123,701"/>
+<area shape="rect" id="node3" href="$classHero.html" title=" " alt="" coords="25,499,103,576"/>
+<area shape="rect" id="node4" href="$classUnit.html" title=" " alt="" coords="27,315,101,451"/>
+<area shape="rect" id="node5" href="$classObject.html" title=" " alt="" coords="20,160,108,267"/>
+<area shape="rect" id="node6" href="$classIObject.html" title=" " alt="" coords="18,5,110,112"/>
+</map>

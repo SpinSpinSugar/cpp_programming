@@ -1,0 +1,8 @@
+<map id="DreadLord" name="DreadLord">
+<area shape="rect" id="node1" title=" " alt="" coords="5,749,116,827"/>
+<area shape="rect" id="node2" href="$classUndead.html" title=" " alt="" coords="13,624,108,701"/>
+<area shape="rect" id="node3" href="$classHero.html" title=" " alt="" coords="21,499,100,576"/>
+<area shape="rect" id="node4" href="$classUnit.html" title=" " alt="" coords="23,315,98,451"/>
+<area shape="rect" id="node5" href="$classObject.html" title=" " alt="" coords="17,160,105,267"/>
+<area shape="rect" id="node6" href="$classIObject.html" title=" " alt="" coords="15,5,107,112"/>
+</map>
