@@ -382,4 +382,8 @@ MigrationBackup/
 *.exe
 *.out
 *.app
-build/*
+*/build/*
+
+# Doxygen
+*/html/
+*/latex/
