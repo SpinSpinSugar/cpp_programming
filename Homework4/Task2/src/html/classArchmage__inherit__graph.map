@@ -1,8 +1,0 @@
-<map id="Archmage" name="Archmage">
-<area shape="rect" id="node1" title=" " alt="" coords="5,749,115,827"/>
-<area shape="rect" id="node2" href="$classHuman.html" title=" " alt="" coords="14,624,106,701"/>
-<area shape="rect" id="node3" href="$classHero.html" title=" " alt="" coords="21,499,99,576"/>
-<area shape="rect" id="node4" href="$classUnit.html" title=" " alt="" coords="23,315,97,451"/>
-<area shape="rect" id="node5" href="$classObject.html" title=" " alt="" coords="16,160,104,267"/>
-<area shape="rect" id="node6" href="$classIObject.html" title=" " alt="" coords="14,5,106,112"/>
-</map>

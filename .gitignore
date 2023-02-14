@@ -385,5 +385,5 @@ MigrationBackup/
 */build/*
 
 # Doxygen
-*/html/
-*/latex/
+*/src/html/*
+*/src/latex/*
