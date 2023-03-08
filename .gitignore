@@ -389,5 +389,5 @@ MigrationBackup/
 */src/latex/*
 
 # Idea
-.idea/*
+.idea/
 .clang-tidy
