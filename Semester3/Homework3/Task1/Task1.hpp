@@ -25,7 +25,7 @@ template <typename T> struct quaternion {
     quaternion& normalize() & { *this /= norm(); return *this; }
     quaternion inverse() { (*this).conj(); *this /= (*this).norm_sq(); return *this; }
     T norm_sq() { return x * x + y * y + z * z + w * w; }
-    T norm() { return sqrt(norm_sq); }
+    T norm() { return sqrt(norm_sq()); }
     void dump(std::ostream& os) const { os << x << ' ' << y << ' '  << z << ' '  << w;}
 };
 

@@ -5,31 +5,28 @@
 #include <mutex>
 
 template <typename T>
-class FunctorGuard;
+struct FunctorGuard;
 
 template <typename Ret, typename... Args>
 struct FunctorGuard<Ret(Args...)> {
     std::function<Ret(Args...)> functor;
-    std::mutex mutex;
-
-    constexpr auto operator()(Args&&... args) -> decltype(auto) {
-        while (!mutex.try_lock()) {} //TODO WTF
-        decltype(auto) ret = std::invoke(functor, args...);
-        mutex.unlock();
-        return ret;
+    static inline std::mutex mtx {};
+    //wtf inline linkage
+    //TODO один мьютекс на все FIX
+    auto operator()(Args&&... args) -> decltype(auto) {
+        const std::lock_guard lock {mtx};
+        return std::invoke(functor, args...);
     }
 
-    constexpr auto operator()(Args&&... args) -> void 
+    auto operator()(Args&&... args) -> void 
         requires std::is_same_v<void, Ret> {
-        while (!mutex.try_lock()) {} //TODO WTF
+        const std::lock_guard lock {mtx};
         std::invoke(functor, args...);
-        mutex.unlock();
     }
 
 };
 
 template <typename Ret, typename... Args>
 FunctorGuard(Ret(Args...)) -> FunctorGuard<Ret(Args...)>;
-
 
 #endif
