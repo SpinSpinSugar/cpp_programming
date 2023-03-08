@@ -387,3 +387,7 @@ MigrationBackup/
 # Doxygen
 */src/html/*
 */src/latex/*
+
+# Idea
+.idea/*
+.clang-tidy
