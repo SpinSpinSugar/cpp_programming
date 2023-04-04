@@ -1,9 +1,9 @@
 CMP = clang++-15
 
 release:
-	$(CMP) -O3 --std=c++2b -march=native -Wall -Wextra -Wshadow TaskDistributor.cpp -o TaskDistributor.out
+	$(CMP) -O3 --std=c++2b -Wall -Wextra -Wshadow TaskDistributor.cpp -o TaskDistributor.out
 debug:
-	$(CMP) -O0 --std=c++2b  -g -Wall -Wextra -Wshadow TaskDistributor.cpp -o TaskDistributor.out
+	$(CMP) -O0 --std=c++2b -g -Wall -Wextra -Wshadow TaskDistributor.cpp -o TaskDistributor.out
 ubsanitizer:
 	$(CMP) -O0 --std=c++2b -fsanitize=undefined -g -Wall -Wextra -Wshadow TaskDistributor.cpp -o TaskDistributor.out
 clean:

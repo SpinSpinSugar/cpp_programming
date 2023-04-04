@@ -5,6 +5,8 @@
 #include <queue>
 #include <condition_variable>
 
+namespace threadPerf {
+
 template <typename T>
 class threadsafe_queue
 {
@@ -37,6 +39,7 @@ public:
         value = std::move(data_queue.front());
         data_queue.pop();
     }
+    
     std::shared_ptr<T> wait_and_pop() {
         std::unique_lock<std::mutex> lk(mut);
         data_cond.wait(lk, [this]
@@ -70,5 +73,7 @@ public:
         return data_queue.empty();
     }
 };
+
+}
 
 #endif
