@@ -388,6 +388,7 @@ MigrationBackup/
 */src/html/*
 */src/latex/*
 
-# Idea
+# other
 .idea/
 .clang-tidy
+.editorconfig
