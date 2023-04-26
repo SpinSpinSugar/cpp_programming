@@ -5,7 +5,7 @@
 
 class vector_add;
 
-constexpr int size = 10;
+constexpr int size = 1024;
 constexpr auto sycl_read = sycl::access::mode::read;
 constexpr auto sycl_write = sycl::access::mode::write;
 
@@ -53,7 +53,7 @@ int main() {
     }
 
     for (int i = 0; i < size; ++i) {
-        std::cout << c[i] << "=" << ans[i] << '\n';
+        //std::cout << c[i] << "=" << ans[i] << '\n';
         assert(c[i] == ans[i]);
     }
     std::cout << "DONE";
