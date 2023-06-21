@@ -392,3 +392,4 @@ MigrationBackup/
 .idea/
 .clang-tidy
 .editorconfig
+.ipynb_checkpoints

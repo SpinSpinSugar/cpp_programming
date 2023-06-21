@@ -1,5 +1,4 @@
-CMP = clang++-15
-
+CMP = clang++-15 -L~/Tools/Libs/boost/boost_1_82_0 -I ~/Tools/Libs/boost/boost_1_82_0
 release:
 	$(CMP) -O3 --std=c++2b -latomic -pthread -Wall -Wextra -Wshadow -Wconversion -Wpedantic Bench.cpp -o Bench.out
 debug:
@@ -11,4 +10,3 @@ clean:
 threadsanitizer:
 	make debug
 	valgrind --tool=helgrind ./Bench.out 1 3 3
-	

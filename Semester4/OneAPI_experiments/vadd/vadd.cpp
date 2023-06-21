@@ -45,7 +45,7 @@ int main() {
             auto a_acc = a_buf.get_access<sycl_read>(cgh);
             auto b_acc = b_buf.get_access<sycl_read>(cgh);
             auto c_acc = c_buf.get_access<sycl_write>(cgh);
-
+            //SIMT
             cgh.parallel_for<vector_add>(sycl::range<1>{size}, [=](sycl::id<1> idx) {
                 c_acc[idx] = a_acc[idx] + b_acc[idx];
                 });

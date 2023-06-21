@@ -21,21 +21,21 @@ private:
     mutable std::mutex mtx;
 
     //const std::lock_guard<std::mutex>& prolongs lifetime!!!!!
-    BlockingStack(const BlockingStack& other, const std::lock_guard<std::mutex>&): st {other.st}, mtx {} {}
+    BlockingStack(const BlockingStack& other, const std::lock_guard<std::mutex>&) : st{ other.st }, mtx{} {}
 
 public:
 
     BlockingStack() = default;
-    BlockingStack(const BlockingStack& other): BlockingStack {other, std::lock_guard {other.mtx}} {}
+    BlockingStack(const BlockingStack& other) : BlockingStack{ other, std::lock_guard {other.mtx} } {}
     BlockingStack(BlockingStack&& other) = delete;
     BlockingStack& operator=(BlockingStack&& rhs) = delete;
     BlockingStack& operator=(const BlockingStack& other) {
         if (this == &other) return *this;
-        BlockingStack tmp {other};
+        BlockingStack tmp{ other };
         st = std::move(tmp.st);
         return *this;
     }
-    
+
     ~BlockingStack() = default;
 
     void push(T&& val) {
@@ -53,7 +53,8 @@ public:
 
     void pop(T& place) {
         std::lock_guard lc {mtx};
-        if (st.empty()) throw empty_stack{};
+        //if (st.empty()) throw empty_stack{};
+        if (st.empty()) return;
         place = std::move(st.top());
         st.pop();
     }

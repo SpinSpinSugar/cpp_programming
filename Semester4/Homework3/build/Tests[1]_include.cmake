@@ -1,0 +1,5 @@
+if(EXISTS "/home/chansons/Repositories/cpp_programming/Semester4/Homework3/build/Tests[1]_tests.cmake")
+  include("/home/chansons/Repositories/cpp_programming/Semester4/Homework3/build/Tests[1]_tests.cmake")
+else()
+  add_test(Tests_NOT_BUILT Tests_NOT_BUILT)
+endif()

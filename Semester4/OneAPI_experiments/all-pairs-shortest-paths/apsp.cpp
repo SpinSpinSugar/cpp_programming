@@ -32,7 +32,7 @@ constexpr int max_distance = 100;
 constexpr int infinite = (nodes * max_distance);
 
 // Number of repetitions.
-constexpr int repetitions = 1;
+constexpr int repetitions = 8;
 
 // Randomly initialize directed graph.
 void InitializeDirectedGraph(int* graph) {
@@ -281,7 +281,7 @@ void BlockedFloydWarshall(queue& q, int* graph) {
 
 int main() {
     try {
-        sycl::queue q{ cpu_selector_v };
+        sycl::queue q {gpu_selector};
         auto device = q.get_device();
         auto work_group_size = device.get_info<info::device::max_work_group_size>();
         auto block_size = block_length * block_length;
@@ -315,7 +315,7 @@ int main() {
 
         // Warm up the JIT.
         // FIXME
-#if 0
+#if 1
         CopyGraph(parallel, graph);
         BlockedFloydWarshall(q, parallel);
 #endif

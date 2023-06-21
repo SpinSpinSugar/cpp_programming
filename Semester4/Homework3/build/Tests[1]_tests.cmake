@@ -1,0 +1,7 @@
+add_test([=[ASSERT_CHECK.N15]=]  /home/chansons/Repositories/cpp_programming/Semester4/Homework3/build/Tests [==[--gtest_filter=ASSERT_CHECK.N15]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ASSERT_CHECK.N15]=]  PROPERTIES WORKING_DIRECTORY /home/chansons/Repositories/cpp_programming/Semester4/Homework3/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[ASSERT_CHECK.N0]=]  /home/chansons/Repositories/cpp_programming/Semester4/Homework3/build/Tests [==[--gtest_filter=ASSERT_CHECK.N0]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ASSERT_CHECK.N0]=]  PROPERTIES WORKING_DIRECTORY /home/chansons/Repositories/cpp_programming/Semester4/Homework3/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[ASSERT_CHECK.Negative]=]  /home/chansons/Repositories/cpp_programming/Semester4/Homework3/build/Tests [==[--gtest_filter=ASSERT_CHECK.Negative]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ASSERT_CHECK.Negative]=]  PROPERTIES WORKING_DIRECTORY /home/chansons/Repositories/cpp_programming/Semester4/Homework3/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  Tests_TESTS ASSERT_CHECK.N15 ASSERT_CHECK.N0 ASSERT_CHECK.Negative)
